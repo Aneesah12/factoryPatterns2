@@ -10,6 +10,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertNotNull;
 
 public class MovieFactoryTest {
 
@@ -18,8 +19,8 @@ public class MovieFactoryTest {
 
         NetflixMovies romComMovie = MovieFactory.getMovies();
 
+        assertNotNull(romComMovie);
         assertThat(romComMovie, instanceOf(RomComMovies.class));
-        assert romComMovie != null;
         assertThat(romComMovie.getMovies().get(0).getMovieTitle(), equalTo("Blah"));
         assertThat(romComMovie.getMovies().get(0).getRating(), equalTo(2));
     }
@@ -29,8 +30,8 @@ public class MovieFactoryTest {
 
         NetflixMovies actionMovie = MovieFactory.getMovies();
 
+        assertNotNull(actionMovie);
         assertThat(actionMovie, instanceOf(ActionMovies.class));
-        assert actionMovie != null;
         assertThat(actionMovie.getMovies().get(0).getMovieTitle(), equalTo("Terminator"));
         assertThat(actionMovie.getMovies().get(0).getRating(), equalTo(5));
     }
@@ -40,8 +41,8 @@ public class MovieFactoryTest {
 
         NetflixMovies scienceFictionMovie = MovieFactory.getMovies();
 
+        assertNotNull(scienceFictionMovie);
         assertThat(scienceFictionMovie, instanceOf(ScienceFictionMovies.class));
-        assert scienceFictionMovie != null;
         assertThat(scienceFictionMovie.getMovies().get(0).getMovieTitle(), equalTo("Alien"));
         assertThat(scienceFictionMovie.getMovies().get(0).getRating(), equalTo(5));
     }
